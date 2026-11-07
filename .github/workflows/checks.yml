@@ -15,6 +15,7 @@ jobs:
         with:
           python-version: '3.12'
           cache: 'pip'
+          cache-dependency-path: requirements_cpu_verified.txt
       - name: Install CPU dependencies
         run: python -m pip install -r requirements_cpu_verified.txt
       - name: Release source and file integrity
