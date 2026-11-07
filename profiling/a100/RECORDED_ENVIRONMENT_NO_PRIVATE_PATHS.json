@@ -1,0 +1,62 @@
+{
+  "nordland": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "faiss": "1.15.1",
+    "numpy": "2.4.6",
+    "cv2": "4.14.0",
+    "checkpoint_hashes": {
+      "dinov2_12288.pth": "d72ee0ce899e2790be6cf6d1d57f75dfad0c76475bd2198e6dc0c3f0221b3583",
+      "dinov2_vitb14_pretrain.pth": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "superpoint_lightglue_v0-1_arxiv.pth": "6ff7040d0a497fc6639337946d7538dae07428c18f77a067a0b5a960e7cc551a",
+      "superpoint_v1.pth": "52b6708629640ca883673b5d5c097c4ddad37d8048b33f09c8ca0d69db12c40e"
+    },
+    "boq_source": {
+      "backbone_name": "dinov2",
+      "checkout_origin": "persistent_official_checkout",
+      "entry_point": "get_trained_boq",
+      "historical_commit_proven": false,
+      "hubconf_sha256": "26d1cd9f1bd12b1f407b2441b7dae37223e7d0e59435ad88abebef813d7b1d2b",
+      "output_dim": 12288,
+      "repository": "amaralibey/Bag-of-Queries",
+      "repository_commit": "1a4965ea7dfd9bd0dd846adf7a0e430f68101d12",
+      "source_type": "torch_hub_local",
+      "warning": "Compare live retrieved identities with the original frozen gallery and query retrieval before calling this exact historical model replication."
+    },
+    "lightglue_commit": "eb42fee2d71449efb0aa5c10549752b5d75384d8",
+    "number_run_specs_checked": 3,
+    "continuous_batch_latency_valid": false
+  },
+  "baidu": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "faiss": "1.15.1",
+    "numpy": "2.4.6",
+    "cv2": "4.14.0",
+    "checkpoint_hashes": {
+      "dinov2_12288.pth": "d72ee0ce899e2790be6cf6d1d57f75dfad0c76475bd2198e6dc0c3f0221b3583",
+      "dinov2_vitb14_pretrain.pth": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+      "superpoint_lightglue_v0-1_arxiv.pth": "6ff7040d0a497fc6639337946d7538dae07428c18f77a067a0b5a960e7cc551a",
+      "superpoint_v1.pth": "52b6708629640ca883673b5d5c097c4ddad37d8048b33f09c8ca0d69db12c40e"
+    },
+    "boq_source": {
+      "backbone_name": "dinov2",
+      "checkout_origin": "persistent_official_checkout",
+      "entry_point": "get_trained_boq",
+      "historical_commit_proven": false,
+      "hubconf_sha256": "26d1cd9f1bd12b1f407b2441b7dae37223e7d0e59435ad88abebef813d7b1d2b",
+      "output_dim": 12288,
+      "repository": "amaralibey/Bag-of-Queries",
+      "repository_commit": "1a4965ea7dfd9bd0dd846adf7a0e430f68101d12",
+      "source_type": "torch_hub_local",
+      "warning": "Compare live retrieved identities with the original frozen gallery and query retrieval before calling this exact historical model replication."
+    },
+    "lightglue_commit": "eb42fee2d71449efb0aa5c10549752b5d75384d8",
+    "number_run_specs_checked": 3,
+    "continuous_batch_latency_valid": false
+  }
+}

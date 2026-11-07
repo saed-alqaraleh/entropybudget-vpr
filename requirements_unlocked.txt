@@ -1,0 +1,14 @@
+# Declared dependencies. Observed versions are in requirements_recorded_scope.md.
+numpy
+pandas
+scipy
+scikit-learn
+faiss-cpu
+opencv-python-headless
+Pillow
+torch
+torchvision
+timm
+einops
+# LightGlue repository commit: eb42fee2d71449efb0aa5c10549752b5d75384d8
+matplotlib

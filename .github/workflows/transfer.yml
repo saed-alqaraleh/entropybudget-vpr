@@ -1,0 +1,47 @@
+name: Import verified research release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  import:
+    if: github.event.head_commit.message == 'Stage verified EntropyBudget bundle [transfer:verified]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Recover and publish verified anonymous research tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .transfer/part-*.bin > /tmp/entropybudget.bundle
+          git bundle verify /tmp/entropybudget.bundle
+          git fetch /tmp/entropybudget.bundle refs/heads/main:refs/heads/verified-release
+          test "$(git rev-parse refs/heads/verified-release)" = 704c8398e3064dbc739a4ed06bf850d4d26cc965
+          test "$(git ls-tree -r --name-only refs/heads/verified-release | wc -l)" = 130
+          if git ls-tree -r --name-only refs/heads/verified-release | grep -Ei '(^|/)(manuscript|submission|response_letter|authors)(/|\\.|$)|\\.(tex|docx)$'; then
+            echo 'Unexpected manuscript/identifying artifact' >&2
+            exit 1
+          fi
+          transfer_blob=$(git rev-parse HEAD:.github/workflows/transfer.yml)
+          export GIT_INDEX_FILE=/tmp/release-index
+          git read-tree refs/heads/verified-release
+          git update-index --add --cacheinfo "100644,$transfer_blob,.github/workflows/transfer.yml"
+          tree_sha=$(git write-tree)
+          unset GIT_INDEX_FILE
+          clean_sha=$(GIT_AUTHOR_NAME="The Authors" GIT_AUTHOR_EMAIL="authors@users.noreply.github.com" GIT_COMMITTER_NAME="The Authors" GIT_COMMITTER_EMAIL="authors@users.noreply.github.com" git commit-tree "$tree_sha" -m "Initial verified code and research evidence")
+          test "$(git ls-tree -r --name-only "$clean_sha" | wc -l)" = 131
+          git push --force origin "$clean_sha":refs/heads/main
+      - name: Run release verification workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh workflow run checks.yml --repo "${{ github.repository }}" --ref main

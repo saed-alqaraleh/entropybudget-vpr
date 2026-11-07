@@ -1,0 +1,12 @@
+{
+  "original_archived_nordland_sha256": "f91934ce5e5951aed6778b7742d6271d7e97523aa31d9f573644d715b42ee34f",
+  "original_archived_baidu_sha256": "25aa38a9da771a408a8fa824b02bad99828b355bc880283a85534ca0ee8ed6b4",
+  "gpu_v2_return_sha256": "aa543c8a7a7b6dfd8ad36fd6289692e668d58fe9dd2278d7e81bff1b8d0d030e",
+  "audit_code_sha256": "d3be990a19c07f188472fb16222a1ba1698c0990e9939cc318e07b1847301e95",
+  "data_scope": "200-query subset for each external dataset, not full archived cohort",
+  "results_sha256": "6e3b1ed0bfb27d13227a4aee0e55bcbbe8a31addd9d96f2461dcffe205dae83d",
+  "mini_inputs": {
+    "nordland_200_query_replay_inputs.npz": "db89612d1f03eb0ecb8b1a35c3b0f66b8a3d7574939c178f337c787ea1e757f1",
+    "baidu_200_query_replay_inputs.npz": "c1efc898d471941d4ada11d4a8b4556f051cf080690339682e3553252cba43a3"
+  }
+}

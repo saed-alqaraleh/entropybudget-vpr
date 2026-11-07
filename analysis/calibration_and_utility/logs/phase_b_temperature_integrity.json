@@ -1,0 +1,33 @@
+{
+  "archive_alignment": "original archived i equals retrieval NPZ row offset",
+  "exact_scalar_entropy_reproduction_T010": {
+    "amstertime": 0.0,
+    "san_francisco_partial_embedded_gps": 0.0,
+    "sped": 0.0,
+    "svox": 0.0,
+    "svox_night": 0.0,
+    "svox_rain": 0.0
+  },
+  "all_max_entropy_diff_eq_zero": true,
+  "original_top100_distances_sha256": {
+    "amstertime": "5a38e8eb512e9be52e005dbb669de330a06dd873f919b86aa1e7dcf9957ea2b8",
+    "san_francisco_partial_embedded_gps": "bc8773b3ae67ce61b9038d759e4e5cf64195418e940c1cf6d4bc5d4e3f3ce810",
+    "sped": "f30d6fc0aa3beba2b90c91a1b4b59a5635c6442bdca12571ae697af188d6d9e9",
+    "svox": "d30830558f7c905c34d8df45a41b778c2f669f22509af0309b8d3a43f208cfcd",
+    "svox_night": "810143699ce499afb12a9609727e64c30ac3cd40a93ad59d5605c341b4283cf7",
+    "svox_rain": "9e825547d9188151a503f0a20da37f4a6f802ab3ba901cf29e7a33d38adce25e"
+  },
+  "n_original_queries": 4600,
+  "temperatures": [
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "temperature_affects": "retrieval uncertainty and allocation only",
+  "scorer_is_frozen": "reused c0/c50 outcomes, no model or matching rerun",
+  "bootstrap_seed_base": 20261106,
+  "bootstrap_replicates": 5000,
+  "status": "COMPLETED - original top100 distances recovered, exact T010 match"
+}

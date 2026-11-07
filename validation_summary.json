@@ -1,0 +1,36 @@
+{
+  "verified_executed_files": 5,
+  "unchanged_review_files": 4,
+  "identity_scan_passed": true,
+  "inspected_npz_arrays": 110,
+  "cpu_check_status": {
+    "tests/smoke_authentic_subset.py": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "tests/test_persistent_checkpoint.py": {
+      "exit_code": 1,
+      "status": "ENVIRONMENT_LIMIT"
+    },
+    "tests/test_drivefs_manifest_and_local_staging.py": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "tests/test_resilient_run_one.py": {
+      "exit_code": 1,
+      "status": "ENVIRONMENT_LIMIT"
+    },
+    "scripts/reproduce_a100_table.py": {
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    "scripts/reproduce_compact_retrieval_audit.py": {
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  },
+  "fresh_gpu_run_status": "PROVISIONAL_INPUTS_AND_FULL_LOCK_UNAVAILABLE",
+  "direct_uninterrupted_timing": "NOT_MEASURED",
+  "released_help_text_changes": 1,
+  "analysis_csv_exact_matches": 11
+}

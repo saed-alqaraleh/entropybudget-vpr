@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "query_rows": 4600,
+  "archived_budget_decisions": 18400,
+  "archived_correctness_disagreements": 0,
+  "independent_reference_checks": 960,
+  "independent_reference_disagreements": 0,
+  "real_tail_invariance_policies": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    50
+  ],
+  "tail_modes": [
+    "zeros",
+    "reverse",
+    "adversarial"
+  ],
+  "real_evidence_queries_for_tail_invariance_per_dataset": 20,
+  "raw_matching_geometry": {
+    "raw_queries": 50,
+    "raw_pairs": 5000,
+    "inliers": 350366,
+    "spatial_max_abs_error": 2.9780783616928375e-08,
+    "spatial_mismatches_above_1e_6": 0,
+    "inlier_and_match_count_identity": true
+  },
+  "hashes": {
+    "validation_inputs/retrieval/svox.npz": "d30830558f7c905c34d8df45a41b778c2f669f22509af0309b8d3a43f208cfcd",
+    "validation_inputs/scoring/svox.npz": "27d45453f2e3a57a877f5017270c54890b67f537e0c9c7f57cdc41c32fc1ee30",
+    "validation_inputs/retrieval/svox_night.npz": "810143699ce499afb12a9609727e64c30ac3cd40a93ad59d5605c341b4283cf7",
+    "validation_inputs/scoring/svox_night.npz": "d5f348ade99e4b66a80e83354c2ed088b970d8caa0e5c22086566462531b47c4",
+    "validation_inputs/retrieval/svox_rain.npz": "9e825547d9188151a503f0a20da37f4a6f802ab3ba901cf29e7a33d38adce25e",
+    "validation_inputs/scoring/svox_rain.npz": "6380969c26f289ce2319af638eb9701d9661a725b95db58944d9975ca5cdd959",
+    "validation_inputs/retrieval/amstertime.npz": "5a38e8eb512e9be52e005dbb669de330a06dd873f919b86aa1e7dcf9957ea2b8",
+    "validation_inputs/scoring/amstertime.npz": "e69baae7dcd014b160f249b3f6d9f05a22aac69a1905e1dfb97c203c66a84b8f",
+    "validation_inputs/retrieval/sped.npz": "f30d6fc0aa3beba2b90c91a1b4b59a5635c6442bdca12571ae697af188d6d9e9",
+    "validation_inputs/scoring/sped.npz": "ce3289cf6d6059513a524f5f5fc72182f6faf0cebac0156507e6beafb036da2e",
+    "validation_inputs/retrieval/san_francisco_partial_embedded_gps.npz": "bc8773b3ae67ce61b9038d759e4e5cf64195418e940c1cf6d4bc5d4e3f3ce810",
+    "validation_inputs/scoring/san_francisco_partial_embedded_gps.npz": "5a1c774351c395c3a28cd771b09b8b950fbeab39f2843039b247e75e22fe3a6a"
+  },
+  "limitations": "This validates cached genuine matching evidence and scorer logic. It does not independently regenerate image features, LightGlue matches, or MAGSAC estimates on the original images."
+}

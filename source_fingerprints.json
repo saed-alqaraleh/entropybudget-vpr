@@ -1,0 +1,28 @@
+{
+  "recorded_executed_sha256": {
+    "src/Q1_Budget_Safe_Allocator_v1.py": "a19fe59b03ab006272d10e90dfb3ef7952e9e33a62e330e7bea0d9f4c3f513fa",
+    "src/Q1_External_Confirmatory_Runner_v3.py": "372d05b984e5a58e428db7150b86665cb4c75aae40c234871d167a50cbb18a01",
+    "src/benchmark_e2e_resilient.py": "fbe220897a00090d48972925f97b6ddde0b7db171bc5af356d01ef256eed2ab8",
+    "src/persistent_checkpoint.py": "e349ccd6e40dc2fa7ba7c44be06175354a9898db36cf035e5b06c419589e7709",
+    "src/vprbudget/data.py": "b177248dc2c05d2727fb152f3ea6055b23332323750b27e844b76b695a9826da"
+  },
+  "released_sha256": {
+    "src/budget_safe_allocator_v1.py": "a19fe59b03ab006272d10e90dfb3ef7952e9e33a62e330e7bea0d9f4c3f513fa",
+    "src/external_confirmatory_runner_v3.py": "372d05b984e5a58e428db7150b86665cb4c75aae40c234871d167a50cbb18a01",
+    "src/benchmark_e2e_resilient.py": "8ce446af9b9bd95d492d17892b6aa49425e51453ef15490534a981bb6abd9496",
+    "src/persistent_checkpoint.py": "e349ccd6e40dc2fa7ba7c44be06175354a9898db36cf035e5b06c419589e7709",
+    "src/vprbudget/data.py": "b177248dc2c05d2727fb152f3ea6055b23332323750b27e844b76b695a9826da"
+  },
+  "recorded_originals_verified": 5,
+  "released_files_matching_executed_sha256": 4,
+  "changes_to_recorded_files": {
+    "src/benchmark_e2e_resilient.py": "One command-line help string replaces a private project name. Executable logic and numerical settings are unchanged."
+  },
+  "path_mapping": {
+    "src/Q1_Budget_Safe_Allocator_v1.py": "src/budget_safe_allocator_v1.py",
+    "src/Q1_External_Confirmatory_Runner_v3.py": "src/external_confirmatory_runner_v3.py",
+    "internal_provenance/config_q1_external_aliked_v3.json": "configs/external_aliked_v3.json",
+    "internal_provenance/config_q1_external_superpoint_v3.json": "configs/external_superpoint_v3.json",
+    "internal_provenance/config_run02_with_sf_partial_final_v2.json": "configs/run02_sf_partial_v2.json"
+  }
+}

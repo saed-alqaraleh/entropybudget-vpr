@@ -1,0 +1,38 @@
+name: Stored-evidence checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+      - name: Install CPU dependencies
+        run: python -m pip install -r requirements_cpu_verified.txt
+      - name: Release source and file integrity
+        run: python scripts/verify_release.py --check-inventory
+      - name: Source and manifest checks
+        run: |
+          python tests/smoke_authentic_subset.py
+          python tests/test_drivefs_manifest_and_local_staging.py
+      - name: Saved timing and retrieval checks
+        run: |
+          python scripts/reproduce_a100_table.py
+          python scripts/reproduce_compact_retrieval_audit.py
+      - name: Query-level source verification
+        run: python tests/audit_authentic.py --package-root .
+      - name: Utility and sensitivity analyses
+        run: |
+          python analysis/calibration_and_utility/analysis/run_phase_a.py
+          python analysis/calibration_and_utility/analysis/run_phase_b.py
+          python analysis/calibration_and_utility/analysis/run_phase_b_temperature.py
+      - name: Verify fingerprints and generated tables
+        run: python scripts/verify_release.py --check-tables

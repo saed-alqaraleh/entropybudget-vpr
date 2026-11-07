@@ -1,0 +1,5 @@
+scope,comparison,difference_pp,ci_low_pp,ci_high_pp,ci_type,passed
+cross_retriever_query_clustered,entropy_budget_vs_uniform_m20,-0.3052938259360278,-0.4478675923630052,-0.1642697743615175,two-sided 95%,False
+cross_retriever_query_clustered,entropy_budget_vs_uniform_m50,-0.7438631291842301,-0.8445945945945946,,one-sided 95% lower bound,False
+cross_retriever_query_clustered,entropy_budget_vs_margin_same_cost,1.5156211257128689,1.388544507810563,1.642697743615175,two-sided 95%,
+retriever_policy_interaction,BoQ_effect_minus_SALAD_effect_vs_m20,0.499008182494421,0.24795437639474335,0.7531614182990329,two-sided 95%,

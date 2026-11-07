@@ -1,0 +1,2 @@
+contrast,difference_pp,ci_low_pp,ci_high_pp,bootstrap_replicates,cluster_unit,stratification
+[BoQ policy effect] - [SALAD policy effect],0.4565217391304348,-0.06521739130434784,0.9782608695652175,100000,physical query,dataset

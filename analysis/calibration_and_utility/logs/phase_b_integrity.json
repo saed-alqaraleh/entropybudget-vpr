@@ -1,0 +1,35 @@
+{
+  "core_n": 4600,
+  "unique_dataset_i": 4600,
+  "datasets": {
+    "amstertime": 1000,
+    "san_francisco_partial_embedded_gps": 233,
+    "sped": 607,
+    "svox": 1000,
+    "svox_night": 823,
+    "svox_rain": 937
+  },
+  "archived_quintile_reproduction_mismatch_vs_round_boundaries": {
+    "amstertime": 0,
+    "san_francisco_partial_embedded_gps": 3,
+    "sped": 3,
+    "svox": 0,
+    "svox_night": 3,
+    "svox_rain": 3
+  },
+  "original_group_depth_means_reproduced": 120,
+  "source_hashes": {
+    "megaloc_per_query_core_for_ci.csv": "f71c4b8507731b7186a60ecc736b4f6a47f46c98efb5716144c9395c7f77cb01",
+    "matching_value_by_uncertainty_quintile.csv": "01d4b50c3183309e185ff26a643a3678ca5c67f262676b13f6eb522d7613a455"
+  },
+  "seed": 20261106,
+  "B": 5000,
+  "outcomes_available_at_depths": [
+    0,
+    20,
+    50,
+    100
+  ],
+  "temperature_sweep_status": "BLOCKED - top-100 retrieval distances, and their query/gallery alignment unavailable",
+  "interpretation_scope": "original development set, exploratory diagnostic, not independent confirmation"
+}

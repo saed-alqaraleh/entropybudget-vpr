@@ -1,0 +1,81 @@
+{
+  "datasets": [
+    "svox",
+    "svox_night",
+    "svox_rain",
+    "amstertime",
+    "sped",
+    "san_francisco_partial_embedded_gps"
+  ],
+  "dev_datasets": [
+    "svox"
+  ],
+  "test_datasets": [
+    "svox_night",
+    "svox_rain",
+    "amstertime",
+    "sped",
+    "san_francisco_partial_embedded_gps"
+  ],
+  "dataset_gt_overrides": {
+    "svox": {
+      "mode": "metric",
+      "threshold_m": 25.0
+    },
+    "svox_sun": {
+      "mode": "metric",
+      "threshold_m": 25.0
+    },
+    "svox_overcast": {
+      "mode": "metric",
+      "threshold_m": 25.0
+    },
+    "svox_night": {
+      "mode": "metric",
+      "threshold_m": 25.0
+    },
+    "svox_rain": {
+      "mode": "metric",
+      "threshold_m": 25.0
+    },
+    "amstertime": {
+      "mode": "pair"
+    },
+    "sped": {
+      "mode": "pair"
+    },
+    "san_francisco_partial_embedded_gps": {
+      "mode": "metric",
+      "threshold_m": 50.0
+    }
+  },
+  "top_k": 100,
+  "budget_levels": [
+    0,
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "mean_budgets": [
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100
+  ],
+  "conformal_m_on": 10,
+  "conformal_alpha": 0.1,
+  "threshold_grid_m": [
+    5.0,
+    10.0,
+    25.0
+  ],
+  "n_bootstrap": 10000,
+  "require_cuda": false
+}

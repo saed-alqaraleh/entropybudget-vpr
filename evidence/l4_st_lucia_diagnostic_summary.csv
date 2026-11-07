@@ -1,0 +1,4 @@
+dataset,hardware,policy,queries,descriptor_mean_ms,service_mean_ms
+st_lucia,L4,entropy_budget,200,657.4415827949838,1287.5163297149652
+st_lucia,L4,uniform_m20,200,24.23460806000321,676.5356229349776
+st_lucia,L4,uniform_m50,200,23.7708157699808,1586.852234609978

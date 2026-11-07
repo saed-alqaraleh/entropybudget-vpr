@@ -1,0 +1,1 @@
+Stored-evidence verification and analysis reproduction are available at the documented scope. Image-level GPU reproduction requires benchmark inputs, third-party model checkpoints, and an appropriate environment. Uninterrupted image-to-ranking latency was not measured.

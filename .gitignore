@@ -1,0 +1,25 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+.pytest_cache/
+.venv/
+venv/
+.env
+*.egg-info/
+build/
+dist/
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Runtime compatibility copies (not committed).
+/src/Q1_Budget_Safe_Allocator_v1.py
+/src/Q1_External_Confirmatory_Runner_v3.py
+/internal_provenance/

@@ -1,0 +1,34 @@
+{
+  "primary_n": 64528,
+  "primary_physical_n": 32264,
+  "by_retriever_dataset": {
+    "boq-dinov2/baidu": 3208,
+    "boq-dinov2/nordland": 27592,
+    "boq-dinov2/st_lucia": 1464,
+    "salad/baidu": 3208,
+    "salad/nordland": 27592,
+    "salad/st_lucia": 1464
+  },
+  "all_primary_entropy_quintile_assignments_match_frozen_policy": true,
+  "all_primary_frozen_outcomes_match_depth_0_or_50": true,
+  "aliked_exact_query_order_count_allocations_retrieval_correct_match": true,
+  "aliked_max_entropy_absdiff_less_than": 1e-12,
+  "paired_physical_query_index_matches_between_retrievers": true,
+  "source_sha256": {
+    "confirmatory_per_query_aliked_boq_dinov2_baidu.csv": "aae6379922c983a3cd17e36f9ed3a067ebae147306f1983f588717caf0b9cfb3",
+    "confirmatory_per_query_aliked_boq_dinov2_nordland.csv": "3474d65104ccefa75c4d9a7397959e1e6c766c18d67979e79d89baceeac2ec4b",
+    "confirmatory_per_query_aliked_boq_dinov2_st_lucia.csv": "54cc5e730ad110462e546121b68d4b478d8485fa61d51867d34fc28725bb5807",
+    "external_primary_per_query_runner_audit_deduplicated.csv": "06075ce09ab33ba2fb2e09d4d90aeed5bbd6dc6f187f30402f49ed0901cbc780",
+    "matching_value_by_uncertainty_quintile.csv": "01d4b50c3183309e185ff26a643a3678ca5c67f262676b13f6eb522d7613a455",
+    "megaloc_per_query_core_for_ci.csv": "f71c4b8507731b7186a60ecc736b4f6a47f46c98efb5716144c9395c7f77cb01"
+  },
+  "bootstrap_seed": 20261105,
+  "bootstrap_B_group": 2500,
+  "bootstrap_B_contrast": 5000,
+  "bootstrap_design": "paired physical queries; resample within fixed archived dataset, and within group for conditional intervals; cross-retriever effects averaged within physical query, stratified by dataset",
+  "point_estimate_policy_minus_m20_pp": -0.3052938259360278,
+  "point_estimate_ci_pp": [
+    -0.44476816265807095,
+    -0.1688801760476078
+  ]
+}
