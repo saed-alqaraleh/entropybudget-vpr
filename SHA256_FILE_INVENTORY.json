@@ -1,7 +1,7 @@
 {
   ".github/workflows/checks.yml": {
-    "sha256": "bcab337473f2ad7154157dacfd1d836f2f68faa3de630f5e8369585deaed7a73",
-    "bytes": 1384
+    "sha256": "9d5dcfd160f36f3408903f18949ca1bcf6708ea49ecfb76077f201415397caa6",
+    "bytes": 1447
   },
   ".gitignore": {
     "sha256": "7bf997a58985c592ba3b40c1a638ac8dc0a153dc061dd4fa1988b1724f86bc3a",
