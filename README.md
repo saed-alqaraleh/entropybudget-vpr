@@ -1,6 +1,17 @@
 # EntropyBudget: Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets
 
-**Research code and stored-evidence verification for a manuscript under review.** EntropyBudget allocates geometric verification across visual place recognition (VPR) queries using retrieval uncertainty measured before local matching. The repository contains the study implementation, execution configurations, evaluation and integrity tests, per-query evidence, precomputed/live retrieval comparisons, and GPU timing records. It supports independent reconstruction of the supplied numerical evidence without redistributing benchmark images or pretrained weights. The manuscript and submission correspondence are **not** included.
+**Official implementation and reproducibility materials** for *Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets*.
+
+EntropyBudget allocates geometric verification across visual place recognition (VPR) queries using retrieval uncertainty measured before local matching. This repository provides the implementation, experimental configurations, evaluation scripts, integrity tests, per-query evidence, retrieval comparisons, and GPU timing records. The verification scripts reproduce the reported numerical summaries from the supplied evidence.
+
+## Authors
+
+| Author | Affiliation |
+| --- | --- |
+| Saed Alqaraleh | Department of Data Science and Artificial Intelligence, College of Information Technology, Mutah University, Karak, Jordan |
+| A. H. Abdul Hafez | Department of Computer Science, College of Computer Sciences and Information Technology, King Faisal University, Al-Ahsa, Saudi Arabia |
+
+Corresponding author — [A. H. Abdul Hafez](mailto:aabdulhafiz@kfu.edu.sa).
 
 ## Method
 
@@ -120,10 +131,14 @@ Reported **query service time** sums image decoding and global descriptor extrac
 
 Against uniform depth 50, mean A100 service demand decreases by **56.9%** on Nordland and **57.6%** on Baidu. At equal mean depth, the verification-heavy branch increases p95 service time to **2.10×** and **2.29×** that of uniform depth 20. Values above are exactly the rounded values in manuscript Table 9; the reconstruction script checks unrounded stored records. See `docs/timing_scope.md`.
 
-## Integrity and citation
+## Integrity and licensing
 
 The five protected source files retain the released SHA-256 values in `source_fingerprints.json`. **Four** byte-match their recorded executed counterparts; `src/benchmark_e2e_resilient.py` differs from the executed source only in a command-line help string, with no change to computation or numerical settings. Renamed protected files have an explicit source-to-release path mapping. Every released file is included in `SHA256_FILE_INVENTORY.json`, excluding the inventory itself.
 
 Original code: [MIT License](LICENSE), copyright © 2026 The Authors. Third-party repositories, datasets, and pretrained weights have independent copyright and licensing terms.
 
-**Citation:** *Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets*. Manuscript under review. Author names, publication details, and a final citation file will be supplied after acceptance.
+## Citation
+
+> Alqaraleh, S., & Abdul Hafez, A. H. (2026). *EntropyBudget: Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets* [Software]. GitHub. https://github.com/saed-alqaraleh/entropybudget-vpr
+
+Machine-readable citation details are available in [CITATION.cff](CITATION.cff).
