@@ -1,6 +1,6 @@
 {
   ".github/workflows/checks.yml": {
-    "sha256": "9d5dcfd160f36f3408903f18949ca1bcf6708ea49ecfb76077f201415397caa6",
+    "sha256": "c879f22a50c7b5427e4c14822c20189cafdf1f499faa122879874aa471d032a0",
     "bytes": 1447
   },
   ".gitignore": {
@@ -12,8 +12,8 @@
     "bytes": 1068
   },
   "README.md": {
-    "sha256": "2ca7410ab885faea6b833f8b12d57aced69fb81e70709991c53eaab3e2929c23",
-    "bytes": 14377
+    "sha256": "dfafcbbbb2e7ac99c1cd4c35bc820e05e7fa6242c02d158d73070c595602a8a2",
+    "bytes": 14431
   },
   "REPRODUCIBILITY_SCOPE.txt": {
     "sha256": "24156f173688cd570a349cc2fa67b5951ae914b39b2ebe7d20c7aeaf3c34f819",
@@ -32,8 +32,8 @@
     "bytes": 11325
   },
   "analysis/calibration_and_utility/analysis/run_phase_b_temperature.py": {
-    "sha256": "35452f012da1735b1dd7db4d9c1d93d7df4cd97566ec40ad95a5f914373c3d45",
-    "bytes": 10142
+    "sha256": "d1e4c6d7185599b134e38296b97f6eb58ac005606c81d88ab2e117211c507d19",
+    "bytes": 10397
   },
   "analysis/calibration_and_utility/baidu_rescue_harm.csv": {
     "sha256": "746e80eb0a120a0433f3a764c438457738f5f1ddeb89aee0c8a42301b0060cfa",
@@ -176,12 +176,12 @@
     "bytes": 671
   },
   "docs/reproducibility.md": {
-    "sha256": "be9380c4ce54b553c62d60de229da6fa5790120ecbad9956989fa5f11a2e0330",
-    "bytes": 1337
+    "sha256": "63d6601fbad0b353d2568a75d907c7feb89acbc138d2041f067ad79a5fdda941",
+    "bytes": 1538
   },
   "docs/timing_scope.md": {
-    "sha256": "5ff99825a51607dfdbda29bbd7221c534f182beb89171b837060503ab81335ad",
-    "bytes": 1593
+    "sha256": "ce55ddbb9713c7d070a04041f03612d7d557767bd3ec6c3ebf93514906de780d",
+    "bytes": 1599
   },
   "evidence/external_primary_inference_runner_audit.csv": {
     "sha256": "ed8986a785381deacd9e89f6336bfb99036129fa59fe14c6faf0e349543cc70b",

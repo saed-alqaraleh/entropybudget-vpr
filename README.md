@@ -75,10 +75,11 @@ The retained `src/boq_hub_recovery.py` loads **official upstream BoQ code** from
 
 ## Reproduce the stored evidence
 
-The commands below validate the supplied records rather than train new models. Each is runnable on CPU from the repository root.
+The commands below validate the supplied records on CPU from the repository root. Check the release inventory on a clean checkout, then use a separate working copy to regenerate tables and figures.
 
 | Command | Expected outcome |
 | --- | --- |
+| `python scripts/verify_release.py --check-inventory` | `PASS:` for five source fingerprints and released-file hashes |
 | `python tests/smoke_authentic_subset.py` | Final JSON includes `"status": "PASS"` |
 | `python tests/test_drivefs_manifest_and_local_staging.py` | Prints `PASS:` |
 | `python scripts/reproduce_a100_table.py` | Reconstructs all **six** A100 policy summaries from 1,200 per-query records and prints `PASS:`; Nordland EntropyBudget mean **654.877 ms**, median **107.405 ms**, p95 **1568.048 ms** in the stored records |
@@ -87,7 +88,6 @@ The commands below validate the supplied records rather than train new models. E
 | `python analysis/calibration_and_utility/analysis/run_phase_a.py` | Reproduces the stored Phase A CSV tables |
 | `python analysis/calibration_and_utility/analysis/run_phase_b.py` | Reproduces the stored utility and fraction–depth analysis CSV tables |
 | `python analysis/calibration_and_utility/analysis/run_phase_b_temperature.py` | Reproduces temperature-sensitivity and ordering CSV tables |
-| `python scripts/verify_release.py --check-inventory` | `PASS:` for five source fingerprints and released-file hashes |
 | `python scripts/verify_release.py --check-tables` | `PASS:` for nine stored analysis CSVs, byte-for-byte |
 
 These checks do not amount to fresh GPU inference. For image-level execution, obtain the original inputs and checkpoints under their respective licenses, then use `python scripts/prepare_execution_paths.py` to create hash-checked, untracked compatibility paths needed by the immutable runner. Inspect `python src/benchmark_e2e_resilient.py --help` for arguments and `docs/execution.md` for scope. The notebook in `notebooks/` never rewrites protected source files.
@@ -107,7 +107,7 @@ Averaged within matched physical queries across retrievers, the frozen policy ex
 
 ## Timing scope and A100 service profile
 
-The reported **query service time** is the sum of three measured per-query stages: (1) image decoding and global descriptor extraction, (2) top-100 search, and (3) local processing through final top-1 scoring. At positive depth, stage 3 includes query SuperPoint extraction, gallery-feature loading/transfer, LightGlue matching, MAGSAC estimation, and final scoring. The measurement **excludes** offline gallery-descriptor/index preparation, query batch waiting, storage I/O, the global retrieval prepass, and entropy/allocation overhead; the last two are reported separately. It is a *stage-summed query-service-demand measurement*, not a wall-clock throughput benchmark (manuscript Section 4.5).
+Reported **query service time** sums image decoding and global descriptor extraction, top-100 search, and local processing through final top-1 scoring. Timed stages include reads of staged query images and, at positive depth, query SuperPoint extraction, gallery-feature loading and transfer, LightGlue matching, MAGSAC estimation, and final scoring. Offline gallery and index preparation, input staging, checkpoint I/O, batch waiting, and entropy and allocation overhead fall outside the sum. The retrieval prepass wall time and allocation overhead are reported separately. Uninterrupted image-to-ranking latency and sustained throughput remain unmeasured (manuscript Section 4.5).
 
 | Dataset, 200-query A100 sample | Policy | Mean depth | Mean service ms | Median ms | p95 ms |
 | --- | --- | ---: | ---: | ---: | ---: |

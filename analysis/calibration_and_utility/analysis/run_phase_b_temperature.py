@@ -10,6 +10,7 @@ from run_phase_b import FAMILY,B,SEED,ci1d,csvout,loadcsv
 
 ROOT=Path(__file__).resolve().parents[1]
 TEMPERATURES=[0.05,0.10,0.20,0.50,1.00]
+ENTROPY_ATOL = 1e-12
 
 def entropy(d,T):
     d=np.asarray(d,dtype=np.float64)
@@ -44,11 +45,14 @@ def main():
         en010=entropy(d,.1)
         old=np.asarray([float(r['entropy']) for r in rec])
         maxerr=float(abs(en010-old).max());matcherr[ds]=maxerr
-        assert maxerr==0.0,(ds,maxerr)
+        # NumPy's CPU kernels can round entropy differently at machine precision.
+        assert maxerr <= ENTROPY_ATOL, (ds, maxerr)
+        order010 = np.argsort(en010, kind='stable')
+        assert np.array_equal(order010, np.argsort(old, kind='stable')), (ds, 'T=0.10 rank mismatch')
         vals={0:np.asarray([int(r['c0']) for r in rec]),20:np.asarray([int(r['c20']) for r in rec]),50:np.asarray([int(r['c50']) for r in rec])}
         mask0=np.zeros(n,dtype=bool)
         k=round(.40*n)
-        mask0[np.argsort(en010,kind='stable')[-k:]]=True
+        mask0[order010[-k:]]=True
         states[ds]={'d':d,'n':n,'vals':vals,'base':mask0,'entropy010':en010,'rank010':rank_ascending(en010),
                     'query_ids':ar['query_indices'],'k':k,'family':FAMILY[ds]}
     rows=[];per=[];diag=[];figure=[]
@@ -153,13 +157,14 @@ def main():
     fig.savefig(ROOT/'figures/phase_b_temperature_accuracy.pdf',bbox_inches='tight')
     plt.close(fig)
     check={'archive_alignment':'original archived i equals retrieval NPZ row offset',
-       'exact_scalar_entropy_reproduction_T010':matcherr,
-       'all_max_entropy_diff_eq_zero':all(v==0 for v in matcherr.values()),
+       'max_abs_entropy_error_T010':matcherr,
+       'entropy_abs_tolerance':ENTROPY_ATOL,
+       'T010_ordering_matches_archive':True,
        'original_top100_distances_sha256':hashes,'n_original_queries':4600,
        'temperatures':TEMPERATURES,'temperature_affects':'retrieval uncertainty and allocation only',
        'scorer_is_frozen':'reused c0/c50 outcomes, no model or matching rerun',
        'bootstrap_seed_base':SEED,'bootstrap_replicates':B,
-       'status':'COMPLETED - original top100 distances recovered, exact T010 match'}
+       'status':'COMPLETED - T=0.10 entropy within tolerance and exact archived ordering'}
     (ROOT/'logs/phase_b_temperature_integrity.json').write_text(json.dumps(check,indent=2)+'\n')
     print(json.dumps({'micro':figure,'diagnostics':diag},indent=2))
 
