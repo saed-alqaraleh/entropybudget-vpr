@@ -8,16 +8,16 @@
     "sha256": "7bf997a58985c592ba3b40c1a638ac8dc0a153dc061dd4fa1988b1724f86bc3a"
   },
   "CITATION.cff": {
-    "bytes": 783,
-    "sha256": "720711606d65b0dcae992e74b37706a3ab38eaedac4614f7841195a26c28b632"
+    "bytes": 749,
+    "sha256": "6d42230298e4eeb0a1c29031969e646bd9d6b1dc1766c0096b9b1c493eb6019b"
   },
   "LICENSE": {
     "bytes": 1068,
     "sha256": "9f1abe28a25b5f6f95c58a81a647de3fa72ff6388d228c59bddd079255709989"
   },
   "README.md": {
-    "bytes": 14663,
-    "sha256": "d4a1b4b3ce74741defac83cad6e5334c0b447583898c8274074894b17ce60eb1"
+    "bytes": 14632,
+    "sha256": "fc0bc83a9040f8e3fa7c658e991e46b0e1eb4c2d26fe2165265b7d0990d4faec"
   },
   "REPRODUCIBILITY_SCOPE.txt": {
     "bytes": 270,

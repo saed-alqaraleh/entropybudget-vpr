@@ -140,4 +140,4 @@ Original code: [MIT License](LICENSE), copyright © 2026 The Authors. Third-part
 
 ## Citation
 
-The software citation, author affiliations, and corresponding-author contact are in [CITATION.cff](CITATION.cff).
+The software citation and author affiliations are in [CITATION.cff](CITATION.cff).
