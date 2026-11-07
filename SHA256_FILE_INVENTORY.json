@@ -9,15 +9,15 @@
   },
   "CITATION.cff": {
     "bytes": 783,
-    "sha256": "24bd41fd54b0731545e08e3a1a73ea93c1b572e6f3c0f5ebc78c3ab4af907c7a"
+    "sha256": "720711606d65b0dcae992e74b37706a3ab38eaedac4614f7841195a26c28b632"
   },
   "LICENSE": {
     "bytes": 1068,
     "sha256": "9f1abe28a25b5f6f95c58a81a647de3fa72ff6388d228c59bddd079255709989"
   },
   "README.md": {
-    "bytes": 14933,
-    "sha256": "0a4dfb5848a9f636ad487f721b4cedb6d169274a35de2e09d1cfb7bbc807dac5"
+    "bytes": 14663,
+    "sha256": "d4a1b4b3ce74741defac83cad6e5334c0b447583898c8274074894b17ce60eb1"
   },
   "REPRODUCIBILITY_SCOPE.txt": {
     "bytes": 270,

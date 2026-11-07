@@ -4,14 +4,21 @@
 
 EntropyBudget allocates geometric verification across visual place recognition (VPR) queries using retrieval uncertainty measured before local matching. This repository provides the implementation, experimental configurations, evaluation scripts, integrity tests, per-query evidence, retrieval comparisons, and GPU timing records. The verification scripts reproduce the reported numerical summaries from the supplied evidence.
 
-## Authors
+## Quick start
 
-| Author | Affiliation |
-| --- | --- |
-| Saed Alqaraleh | Department of Data Science and Artificial Intelligence, College of Information Technology, Mutah University, Karak, Jordan |
-| A. H. Abdul Hafez | Department of Computer Science, College of Computer Sciences and Information Technology, King Faisal University, Al-Ahsa, Saudi Arabia |
+Use Python 3.12 to verify the stored evidence on CPU.
 
-Corresponding author — [A. H. Abdul Hafez](mailto:aabdulhafiz@kfu.edu.sa).
+```bash
+git clone https://github.com/saed-alqaraleh/entropybudget-vpr.git
+cd entropybudget-vpr
+python -m pip install -r requirements_cpu_verified.txt
+python scripts/verify_release.py --check-inventory
+python tests/smoke_authentic_subset.py
+python scripts/reproduce_a100_table.py
+python scripts/reproduce_compact_retrieval_audit.py
+```
+
+These commands verify the release files, run a scoring check, and reconstruct the A100 timing and retrieval comparisons. See [Reproduce the stored evidence](#reproduce-the-stored-evidence) for the full verification procedure.
 
 ## Method
 
@@ -39,15 +46,9 @@ For verified candidates, the fixed spatial rank-fusion scorer combines global si
 | `notebooks/`, `docs/` | GPU launch template, timing scope, dependency provenance, and reproduction guidance |
 | `source_fingerprints.json`, `SHA256_FILE_INVENTORY.json` | Two source hash sets and released-file SHA-256 inventory |
 
-## Installation
+## GPU execution
 
-For **CPU-only stored-evidence verification**, use Python 3.12 and install the verification dependencies:
-
-```bash
-python -m pip install -r requirements_cpu_verified.txt
-```
-
-Run all commands below from the repository root. A clean GPU run additionally requires PyTorch/CUDA, FAISS, OpenCV, SuperPoint–LightGlue, the official global retriever implementations and checkpoints, and the original benchmark images. The A100 profiling record identifies **PyTorch 2.11.0+cu130, CUDA 13.0, FAISS 1.15.1, NumPy 2.4.6, and OpenCV 4.14.0**. This is a **record of installed versions**, not a complete environment lock; see `requirements_recorded_scope.md`, `requirements_unlocked.txt`, and `docs/dependencies.md` before recreating a GPU environment.
+A clean GPU run requires PyTorch/CUDA, FAISS, OpenCV, SuperPoint–LightGlue, the official global retriever implementations and checkpoints, and the original benchmark images. The A100 profiling record identifies **PyTorch 2.11.0+cu130, CUDA 13.0, FAISS 1.15.1, NumPy 2.4.6, and OpenCV 4.14.0**. The recorded dependency versions and the scope of the partial environment record are documented in `requirements_recorded_scope.md`, `requirements_unlocked.txt`, and `docs/dependencies.md`.
 
 ## Data access
 
@@ -139,6 +140,4 @@ Original code: [MIT License](LICENSE), copyright © 2026 The Authors. Third-part
 
 ## Citation
 
-> Alqaraleh, S., & Abdul Hafez, A. H. (2026). *EntropyBudget: Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets* [Software]. GitHub. https://github.com/saed-alqaraleh/entropybudget-vpr
-
-Machine-readable citation details are available in [CITATION.cff](CITATION.cff).
+The software citation, author affiliations, and corresponding-author contact are in [CITATION.cff](CITATION.cff).

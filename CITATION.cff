@@ -3,12 +3,12 @@ message: "If you use EntropyBudget in your research, please cite this software."
 title: "EntropyBudget: Uncertainty-Guided Query-Adaptive Geometric Verification for Visual Place Recognition under Computational Budgets"
 type: software
 authors:
-  - given-names: Saed
-    family-names: Alqaraleh
-    affiliation: "Department of Data Science and Artificial Intelligence, College of Information Technology, Mutah University, Karak, Jordan"
   - given-names: "A. H."
     family-names: Abdul Hafez
     affiliation: "Department of Computer Science, College of Computer Sciences and Information Technology, King Faisal University, Al-Ahsa, Saudi Arabia"
     email: aabdulhafiz@kfu.edu.sa
+  - given-names: Saed
+    family-names: Alqaraleh
+    affiliation: "Department of Data Science and Artificial Intelligence, College of Information Technology, Mutah University, Karak, Jordan"
 repository-code: "https://github.com/saed-alqaraleh/entropybudget-vpr"
 license: MIT
